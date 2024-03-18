@@ -31,10 +31,12 @@ module tb_w6;
 	//////////////////////////////////
 	//4:2 Priority Encoder
 	//input 
-	//Fill this out
+	reg A_4_TO_2_P, B_4_TO_2_P, C_4_TO_2_P, D_4_TO_2_P;
 	
 	//output
-	//Fill this out
+	wire OUTPUT1_A_4_TO_2_P_B, OUTPUT0_A_4_TO_2_P_B;
+	wire OUTPUT1_A_4_TO_2_P_D, OUTPUT0_A_4_TO_2_P_D;
+	wire OUTPUT1_A_4_TO_2_P_G, OUTPUT0_A_4_TO_2_P_G;
 	
 	//temporal variable for loop
 	//You may use it to create your test plan for the 4:2 priority module
@@ -53,14 +55,16 @@ module tb_w6;
 	two_to_four_decoder_gatelevel_module two_to_four_decoder_gatelevel(.a(A_2_TO_4), .b(B_2_TO_4), .out0(OUTPUT0_2_TO_4_G), .out1(OUTPUT1_2_TO_4_G), .out2(OUTPUT2_2_TO_4_G), .out3(OUTPUT3_2_TO_4_G));
 	
 	//4:2 Priority encoder
-	//Fill this out
+	four_to_two_priority_encoder_behavioral_module four_to_two_priority_encoder_behavioral( .a(A_4_TO_2_P), .b(B_4_TO_2_P), .c(C_4_TO_2), .d(D_4_TO_2_P), .out0(OUTPUT0_4_TO_2_P_B), .out1(OUTPUT1_4_TO_2_P_B));
+	four_to_two_priority_encoder_dataflow_module four_to_two_priority_encoder_dataflow( .a(A_4_TO_2_P), .b(B_4_TO_2_P), .c(C_4_TO_2_P), .d(D_4_TO_2_P), .out0(OUTPUT0_4_TO_2_P_D), .out1(OUTPUT1_4_TO_2_P_D));
+	four_to_two_priority_encoder_gatelevel_module four_to_two_priority_encoder_gatelevel( .a(A_4_TO_2_P), .b(B_4_TO_2_P), .c(C_4_TO_2_P), .d(D_4_TO_2_P), .out0(OUTPUT0_4_TO_2_P_G), .out1(OUTPUT1_4_TO_2_P_G));
 	
 	
 	initial
 	begin
 		 A_4_TO_2 = 1'b0; B_4_TO_2 = 1'b0; C_4_TO_2 = 1'b0; D_4_TO_2 = 1'b0;
 		 A_2_TO_4 = 1'b0; B_2_TO_4 = 1'b0;
-		 //Fill this out
+		 A_4_TO_2_P = 1'b0; B_4_TO_2_P = 1'b0; C_4_TO_2_P = 1'b0; D_4_TO_2_P = 1'b0;
 	end
 	
 	initial 
@@ -79,7 +83,10 @@ module tb_w6;
 		#10 A_2_TO_4 = 1'b1; B_2_TO_4 = 1'b1;
 		
 		#90 //delay to border the test of 4:2 Priority encoder
-		//Fill this out
+		#10 A_4_TO_2_P = 1'b0; B_4_TO_2_P = 1'b0; C_4_TO_2_P = 1'b0; D_4_TO_2_P = 1'b1;	 
+		#10 A_4_TO_2_P = 1'b0; B_4_TO_2_P = 1'b0; C_4_TO_2_P = 1'b1; D_4_TO_2_P = 1'b0;	
+		#10 A_4_TO_2_P = 1'b0; B_4_TO_2_P = 1'b1; C_4_TO_2_P = 1'b0; D_4_TO_2_P = 1'b0;	
+		#10 A_4_TO_2_P = 1'b1; B_4_TO_2_P = 1'b0; C_4_TO_2_P = 1'b0; D_4_TO_2_P = 1'b0;	
 
 	end
 	
