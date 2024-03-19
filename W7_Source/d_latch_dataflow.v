@@ -6,7 +6,7 @@ module d_latch_dataflow_module (d, en, q, q_bar);
 
 	output q, q_bar;
 	
-	//Fill this out.
+	assign q = (en == 1'b1) ? !(d||q_bar) : q;
+	assign q_bar = (en == 1'b1) ? !(d||q) : q_bar;
 	
 endmodule
-

@@ -78,9 +78,9 @@ module tb_w7;
 		#10 S = 1'b1; R = 1'b0; 
 		//#10 S = 1'b1; R = 1'b1; //This is for the undefined operation. Just try it and do not take care of it.
 		
-		#10
 		// Test pattern for D latch	
-		//Fill this out.
+		#10 EN_D_LATCH = 1'b1;
+		#10 D = 1'b0; #10 D = 1'b1;
 		
 	end
 	
