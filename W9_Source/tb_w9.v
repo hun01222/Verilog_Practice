@@ -48,13 +48,13 @@ module tb_w9;
 	
 	//8-bit register
 	eight_bit_register_behavioral_module eight_bit_register_behavioral(.in(IN_8_BIT_REGISTER), .clk(CLK), .rst(RESET_8_BIT_REGISTER), .out(OUT_8_BIT_REGISTER_B));	
-	//Fill this out	
-	
+	eight_bit_register_structural_module eight_bit_register_structural(.in(IN_8_BIT_REGISTER), .clk(CLK), .rst(RESET_8_BIT_REGISTER), .out(OUT_8_BIT_REGISTER_S));
+
 	//8-bit shift register
 	eight_bit_shift_register_behavioral_module eight_bit_shift_register_behavioral(.shift_in(SHIFT_IN_8_BIT_SHIFT_REGISTER), .clk(CLK), .rst(RESET_8_BIT_SHIFT_REGISTER), .out(OUT_8_BIT_SHIFT_REGISTER_B));	
 	eight_bit_shift_register_behavioral2_module eight_bit_shift_register_behavioral2(.shift_in(SHIFT_IN_8_BIT_SHIFT_REGISTER), .clk(CLK), .rst(RESET_8_BIT_SHIFT_REGISTER), .out(OUT_8_BIT_SHIFT_REGISTER_B2));	
 	eight_bit_shift_register_behavioral3_module eight_bit_shift_register_behavioral3(.shift_in(SHIFT_IN_8_BIT_SHIFT_REGISTER), .clk(CLK), .rst(RESET_8_BIT_SHIFT_REGISTER), .out(OUT_8_BIT_SHIFT_REGISTER_B3));	
-	//Fill this out
+	eight_bit_shift_register_structural_module eight_bit_shift_register_structural(.shift_in(SHIFT_IN_8_BIT_SHIFT_REGISTER), .clk(CLK), .rst(RESET_8_BIT_SHIFT_REGISTER), .out(OUT_8_BIT_SHIFT_REGISTER_S));
 	
 	initial
 	begin
@@ -82,7 +82,7 @@ module tb_w9;
 		#20 RESET_1_BIT_REGISTER = 1'b0; IN_1_BIT_REGISTER = 1'b0;
 		
 		//test pattern for 8-bit register
-		//Fill this out
+		//while 써도 됨?
 			
 		//test pattern for 8-bit shift register
 		//Fill this out

@@ -10,8 +10,7 @@ module d_latch_sturctural_module (d, en, q, q_bar);
 	
 	not_gate not_1(.a(d), .out(not_1_output));
 
-	d_latch_structural_submodule d_latch_structural_submodule_1(.d(d), .en(en), .q(q), .q_bar(q_bar));
-	d_latch_structural_submodule d_latch_structural_submodule_1(.d(not_1_output), .en(en), .q(q_bar), .q_bar(q));
+	gated_sr_latch_behavioral_module gated_sr_latch_behavioral(.s(d), .r(not_1_output), .en(en), .q(q), .q_bar(q_bar));
 	
 endmodule
 

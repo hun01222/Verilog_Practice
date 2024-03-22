@@ -129,11 +129,14 @@ module tb_w8;
 		#40 D = 1'b1; 
 		
 		// Test pattern for JK flip flop 
-		//Fill this out
+		#20 J = 1'b0; K = 1'b0; 
+		#20 J = 1'b0; K = 1'b1; 
+		#20 J = 1'b1; K = 1'b0;
+		#20 J = 1'b1; K = 1'b1;
 		
 		#20 // Test pattern for T flip flop 		
-		//Fill this out
-
+		#20 T = 1'b0;
+		#20 T = 1'b1;
 		
 		
 	end
