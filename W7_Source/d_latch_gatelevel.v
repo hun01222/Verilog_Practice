@@ -18,7 +18,7 @@ module d_latch_gatelevel_module (d, en, q, q_bar);
 	or_gate or_1(.a(and_1_output), .b(q_bar), .out(or_1_output));
 	or_gate or_2(.a(and_2_output), .b(q), .out(or_2_output));
 
-	not_gate not_2(.a(or_1_output), .out(q_bar));
-	not_gate not_3(.a(or_2_output), .out(q));
+	not_gate not_2(.a(or_1_output), .out(q));
+	not_gate not_3(.a(or_2_output), .out(q_bar));
 
 endmodule
