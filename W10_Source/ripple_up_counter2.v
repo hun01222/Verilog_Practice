@@ -7,10 +7,10 @@ module ripple_counter2_module(clk, rst, preset, out);
     output [3:0] out;	
 	wire [3:0] out_bar;
 	
-	d_flip_flop_behavioral_module d_flip_flop_behavioral0(.d(out[3]), .clk(clk), .rst(out[3]), .preset(preset[0]), .q(out[0]));
-	d_flip_flop_behavioral_module d_flip_flop_behavioral1(.d(out[0]), .clk(clk), .rst(out[3]), .preset(preset[1]), .q(out[1]));
-	d_flip_flop_behavioral_module d_flip_flop_behavioral2(.d(out[1]), .clk(clk), .rst(out[3]), .preset(preset[2]), .q(out[2]));
-	d_flip_flop_behavioral_module d_flip_flop_behavioral3(.d(out[2]), .clk(clk), .rst(out[3]), .preset(preset[3]), .q(out[3]));
+	jk_flip_flop_behavioral_module jk_flip_flop_behavioral0(.j(1'b1), .k(1'b1), .clk(clk), .rst(rst), .q(out[0]), .q_bar(out_bar[0]));
+	jk_flip_flop_behavioral_module jk_flip_flop_behavioral1(.j(1'b1), .k(1'b1), .clk(clk), .rst(rst), .q(out[1]), .q_bar(out_bar[1]));
+	jk_flip_flop_behavioral_module jk_flip_flop_behavioral2(.j(1'b1), .k(1'b1), .clk(clk), .rst(rst), .q(out[2]), .q_bar(out_bar[2]));
+	jk_flip_flop_behavioral_module jk_flip_flop_behavioral3(.j(1'b1), .k(1'b1), .clk(clk), .rst(rst), .q(out[3]), .q_bar(out_bar[3]));
 	
 
 endmodule
