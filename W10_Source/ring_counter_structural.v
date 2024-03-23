@@ -1,4 +1,4 @@
-module ring_counter_behavioral_module (clk, rst, preset, out);
+module ring_counter_structural_module (clk, rst, preset, out);
   
   input clk;
   input rst;
