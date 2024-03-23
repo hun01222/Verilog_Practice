@@ -1,7 +1,7 @@
 module ring_counter_behavioral_module (clk, rst, preset, out);
   
   input clk;
-  input reset;
+  input rst;
   input [3:0] preset; // 4'b0001
 
   output [3:0] out;
