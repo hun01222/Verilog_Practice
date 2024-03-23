@@ -1,4 +1,4 @@
-module ripple_counter_module(clk, rst, preset, out);
+module ripple_counter2_module(clk, rst, preset, out);
 
     input clk;
 	input rst;
