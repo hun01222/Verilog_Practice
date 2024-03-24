@@ -45,6 +45,12 @@ module tb_w11;
 	wire [2:0] STATE_MOORE_COUNTER;
 	wire [2:0] NEXT_STATE_MOORE_COUNTER;
 
+	reg RESET_MEALY_COUNTER;
+	reg IN_MEALY_COUNTER;
+
+	wire [2:0] OUT_MEALY_COUNTER;
+	wire [2:0] STATE_MEALY_COUNTER;
+
 
 	//Module instantiation
 	//Moore Machine example
@@ -55,6 +61,7 @@ module tb_w11;
 	
 	//Counter (Homework)
 	moore_counter_module moore_counter(.clk(CLK), .in(IN_MOORE_COUNTER), .rst(RESET_MOORE_COUNTER), .out(OUT_MOORE_COUNTER), .state(STATE_MOORE_COUNTER), .next_state(NEXT_STATE_MOORE_COUNTER));
+	mealy_counter_module mealy_counter(.clk(CLK), .in(IN_MEALY_COUNTER), .rst(RESET_MEALY_COUNTER), .out(OUT_MEALY_COUNTER), .state(STATE_MEALY_COUNTER));
 	
 	
 	initial
@@ -65,9 +72,10 @@ module tb_w11;
 		 RESET_MEALY_EXAMPLE = 1'b1;
 		 IN_MEALY_EXAMPLE  = 1'b0;
 		 //Counter (Homework)
-		 //Fill this out.
 		 RESET_MOORE_COUNTER = 1'b1;
 		 IN_MOORE_COUNTER = 1'b0;
+		 RESET_MEALY_COUNTER = 1'b1;
+		 IN_MEALY_COUNTER = 1'b0;
 	end
 	
 	//clock
@@ -90,8 +98,11 @@ module tb_w11;
 			IN_MEALY_EXAMPLE  = 1'b1;
 			RESET_MOORE_COUNTER = 1'b0;
 			IN_MOORE_COUNTER = 1'b1;
+			RESET_MEALY_COUNTER = 1'b0;
+			IN_MEALY_COUNTER = 1'b1;
 
-		#100 IN_MOORE_COUNTER =1'b0;
+		#100 IN_MOORE_COUNTER = 1'b0;
+			IN_MEALY_COUNTER = 1'b0;
 			
 		#300 IN_MEALY_EXAMPLE  = 1'b0;
 			RESET_MOORE_EXAMPLE = 1'b1;
