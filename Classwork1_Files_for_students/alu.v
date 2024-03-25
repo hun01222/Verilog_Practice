@@ -12,7 +12,7 @@ module ALU #(parameter Width = 32)(control, operand1, operand2, out, clk);
 		case(control)
 			4'b0001 : out <= operand1 + operand2;
 			4'b0010 : out <= operand1 - operand2;
-			4'b0011 : out <= operand1 * operand2;
+			4'b0011 : out <= operand1 & operand2;
 			4'b0100 : out <= operand1 << operand2;
 		endcase
 	end
