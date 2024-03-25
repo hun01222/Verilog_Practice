@@ -11,7 +11,7 @@ module Registerfile #(parameter Width = 32)(R1, R2, RD1, RD2, clk);
 	
 	initial
 	begin
-		Register[0] = 32'd0;
+		Register[0] = 32'd0; // 배열 초기화는 사실 main function에서 하는게 좋음
 		Register[1] = 32'd1;
 		Register[2] = 32'd2;
 		Register[3] = 32'd3;
@@ -52,7 +52,7 @@ module Registerfile #(parameter Width = 32)(R1, R2, RD1, RD2, clk);
 	begin
 		if (R1 != 0 && R2 != 0)
 		begin
-			RD1 <= Register[R1];
+			RD1 <= Register[R1]; //reg type 이여서 이렇게
 			RD2 <= Register[R2];
 		end
 		else
