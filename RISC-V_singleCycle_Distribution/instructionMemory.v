@@ -9,7 +9,7 @@ module instructionMemory
     // sequential, comb 엄격히 구분, input timing의 문제
 
     initial begin
-        mem[ 0] = 32'b000100100011001000000010100000010;
+        mem[ 0] = 32'b00010010001100100000001010000010; // 32'h12320282
     end
     assign instruction = mem[address];
 endmodule

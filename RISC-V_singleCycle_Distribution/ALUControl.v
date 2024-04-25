@@ -20,7 +20,7 @@ module ALUControl
                 4'b0100 : control <= 4'b0111; // xor
                 default : control <= 4'bxxxx;
             endcase
-            2'b11 : case({0,funct3})     // immediate instructions
+            2'b11 : case({1'b0,funct3})     // immediate instructions
                 4'b0000 : control <= 4'b1000;
                 default : control <= 4'bxxxx;
             endcase

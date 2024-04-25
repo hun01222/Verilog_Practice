@@ -16,4 +16,4 @@ module mainController
             default    : control = 10'bxxxxxxxxxx; // case x 라는걸 써야된다고 함
         endcase
     end
-endmodule$
+endmodule

@@ -12,7 +12,7 @@ module immediateGeneration
             7'b0010011 : out = {{{Width-12}{in[31]}}, in[31:20]};
             7'b1100111 : out = {{{Width-12}{in[31]}}, in[31:20]};
             7'b1101111 : out = {{{Width-20}{in[31]}}, in[31], in[19:12], in[20], in[30:21]};
-            7'b0000010 : out = {{{Width-12}{0}}, in[31:20]};
+            7'b0000010 : out = {{{Width-12}{1'b0}}, in[31:20]};
             default    : out = {Width{1'h0}};
         endcase
     end
