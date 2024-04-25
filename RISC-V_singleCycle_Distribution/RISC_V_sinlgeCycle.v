@@ -26,9 +26,7 @@ module RISC_V_singleCycle
     ALUControl ALUCtrl(.ALUOp(ALUOp), .funct7_30(instruction[30]), .funct3(instruction[14:12]), .control(ALUCtrlSig)); // ALU controller
 
     // execute
-    MUX2to1 ALUOp2Sel(.in0(readData2_reg), .in1(immediate_offset), .sel(ALUSrc), .out(ALUOperand2));
-    ALU fixedPoint_ALU(.control(ALUCtrlSig), .operand1(readData1_reg), .operand2(ALUOperand2), .result(ALUOut), .zero(zero));
-    
+    MUX2to1 ALUOp2Sel(.in0(readData2_reg), .in1(immediate_offset), .sel(ALUSrc), .out(ALUOperand2));    
     // memory
     dataMemory dataMem(.clk(clk), .memWrite(memWrite), .memRead(memRead), .address(ALUOut), .writeData(readData2_reg), .readData(readData_mem));
     MUX2to1 dataToRegSel(.in0(ALUOut), .in1(readData_mem), .sel(memToReg), .out(dataToReg));

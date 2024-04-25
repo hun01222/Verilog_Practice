@@ -20,12 +20,8 @@ module ALUControl
                 4'b0100 : control <= 4'b0111; // xor
                 default : control <= 4'bxxxx;
             endcase
-            2'b11 : case({funct7_30,funct3})     // immediate instructions
-                4'b0011 : control <= 4'b0101; // sltui
-                4'b0100 : control <= 4'b0111; // xori
-                4'b0110 : control <= 4'b0001; // ori
-                4'b0101 : control <= 4'b1000; // srli
-                4'b1101 : control <= 4'b1010; // srai
+            2'b11 : case({0,funct3})     // immediate instructions
+                4'b0000 : control <= 4'b1000;
                 default : control <= 4'bxxxx;
             endcase
         endcase
