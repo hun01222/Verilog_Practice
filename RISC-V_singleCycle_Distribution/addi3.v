@@ -1,4 +1,4 @@
-
+/**
 //instmem에서
 mem[n] = 32'b0001 0010 0011 00100 000 00101 0000010;
 //            1 + 2 + 3 + x4, fun3, x5, opcode (새로 정의)
@@ -20,3 +20,4 @@ endcase
 case(control)
   4'b1000: result = operand1 + {{{Width-4}{1'b0}}, operand2[11:8]} + {{{Width-4}{1'b0}}, operand2[7:4]} + {{{Width-4}{1'b0}}, operand2[3:0]};
 endcase
+**/
