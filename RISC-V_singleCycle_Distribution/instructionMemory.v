@@ -11,7 +11,7 @@ module instructionMemory
     initial begin
         mem[ 0] = 32'h12320282; // 32'b0001 0010 0011 00100 000 00101 0000010 // 1, 2, 3, x4, fun3, x5, opcode
         mem[ 4] = 32'h34508202; // 32'b0011 0100 0101 00001 000 00100 0000010 // 3, 4, 5, x1, fun3, x4, opcode
-        mem[ 8] = 32'h31108282; // 32'b0011 0001 0001 00001 000 00101 0000010 // 3, 1, 1, x1, fun3, x5, opcode
+        mem[ 8] = 32'h31120282; // 32'b0011 0001 0001 00100 000 00101 0000010 // 3, 1, 1, x1, fun3, x5, opcode
     end
     assign instruction = mem[address];
 endmodule
