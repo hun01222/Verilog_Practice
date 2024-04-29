@@ -1,5 +1,5 @@
 matmul:
-        beq     x31,x0,34 // 68/2
+        beq     x31,x23,34 // 68/2
 .L4:
         add     x26,x29,x29 // 2i
         add     x26,x26,x29 // 3i
