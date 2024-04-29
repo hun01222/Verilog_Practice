@@ -18,6 +18,7 @@ module ALUControl
                 4'b0010 : control <= 4'b0100; // slt  (set less than)
                 4'b0011 : control <= 4'b0101; // sltu (set less than unsigned)
                 4'b0100 : control <= 4'b0111; // xor
+                4'b1001 : control <= 4'b1001; // mul
                 default : control <= 4'bxxxx;
             endcase
             2'b11 : case({1'b0,funct3})     // immediate instructions

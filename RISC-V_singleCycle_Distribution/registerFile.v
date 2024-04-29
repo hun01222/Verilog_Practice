@@ -35,14 +35,14 @@ module registerFile
         register[21] = 32'h00000012;
         register[22] = 32'h00000013;
         register[23] = 32'h00000014;
-        register[24] = 32'h00000015;
-        register[25] = 32'h00000016;
-        register[26] = 32'h00000017;
-        register[27] = 32'h00000018;
-        register[28] = 32'h00000019;
-        register[29] = 32'h0000001A;
-        register[30] = 32'h0000002A;
-		register[31] = 32'h00000031;
+        register[24] = 32'h00000000;
+        register[25] = 32'h00000000;
+        register[26] = 32'h00000000;
+        register[27] = 32'h00000000;
+        register[28] = 32'h00000000;
+        register[29] = 32'h00000000;
+        register[30] = 32'h00000000;
+		register[31] = 32'h00000000;
     end
     
 	always @(posedge clk)
