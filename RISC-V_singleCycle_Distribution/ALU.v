@@ -18,6 +18,7 @@ module ALU
             4'b0111: result = operand1 ^ operand2;
             4'b1000: result = operand1 + {{{Width-4}{1'b0}}, operand2[11:8]} + {{{Width-4}{1'b0}}, operand2[7:4]} + {{{Width-4}{1'b0}}, operand2[3:0]};
             4'b1001: result = operand1 * operand2;
+            4'b1110: result = !(operand1 - operand2);
             default: result = {Width{1'bx}};
         endcase
     end

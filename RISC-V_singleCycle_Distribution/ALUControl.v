@@ -8,7 +8,7 @@ module ALUControl
     always @(*) begin
         case (ALUOp)
             2'b00 : control <= 4'b0010;       // addition for ld, sw, jal and jalr
-            2'b01 : control <= 4'b0110;       // subtraction for beq
+            2'b01 : control <= 4'b1110;       // subtraction for beq
             2'b10 : case({funct7_30,funct3})
                 4'b0000 : control <= 4'b0010; // add
                 4'b1000 : control <= 4'b0110; // sub
