@@ -1,5 +1,5 @@
 matmul:
-        beq     x31,x0,32 // (68-4)/2
+        beq     x31,x0,34 // 68/2
 .L4:
         add     x26,x29,x29 // 2i
         add     x26,x26,x29 // 3i
@@ -13,10 +13,10 @@ matmul:
         add     x31,x31,x24 // mem[mat+3i+j]*mem[vec+j]+k
         addi    x30,x30,1 // j+1
 .L3:
-        beq     x30,x23,0  // j<=2 // (4-4)/2
+        beq     x30,x23,2  // j<=2 // 4/2
         sw      x31,0(x29) // mem[result+i]=k
         addi    x31,x0,0 // k=0
         addi    x30,x0,0 // j=0
         addi    x29,x29,1 // i+1
 .L2:
-        beq     x29,x23,22  // i<=2 // (48-4)/2
+        beq     x29,x23,24  // i<=2 // 48/2
