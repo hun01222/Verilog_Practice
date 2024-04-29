@@ -22,7 +22,7 @@ module ALUControl
                 default : control <= 4'bxxxx;
             endcase
             2'b11 : case({1'b0,funct3})     // immediate instructions
-                4'b0000 : control <= 4'b1000;
+                4'b0000 : control <= 4'b1000; // addi3
                 default : control <= 4'bxxxx;
             endcase
         endcase
