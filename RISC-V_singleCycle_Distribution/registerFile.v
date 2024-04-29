@@ -30,9 +30,9 @@ module registerFile
         register[17] = 32'h00000018;
         register[18] = 32'h00000019;
         register[19] = 32'h0000001A;
-        register[20] = 32'h0000002A;
-        register[21] = 32'h00000001;
-        register[22] = 32'h0000000C;
+		register[20] = 32'h0000001A;
+        register[21] = 32'h00000012;
+        register[22] = 32'h00000013;
         register[23] = 32'h00000003;
         register[24] = 32'h00000000;
         register[25] = 32'h00000000;
