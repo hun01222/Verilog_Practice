@@ -40,6 +40,6 @@ module RISC_V_singleCycle
     assign beq = branch && zero;
     assign PCPlusImmSel = beq || jal;
     mult2 shifter(.in(immediate_offset), .out(offset));
-    adder adder_baseOffset(.addend(1'b0), .adder(offset), .result(PCPlusImm)); // PC relative
+    adder adder_baseOffset(.addend(32'h00000000), .adder(offset), .result(PCPlusImm)); // PC relative
     MUX4to1 onGoingAddrSel(.in0(consecInstAddr), .in1(ALUOut), .in2(PCPlusImm), .sel({PCPlusImmSel, jalr}), .out(onGoingInstAddr));
 endmodule
