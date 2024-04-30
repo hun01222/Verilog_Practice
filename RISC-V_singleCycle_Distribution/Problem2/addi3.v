@@ -12,7 +12,7 @@ endcase
 
 //immGen에서
 case(in[6:0])
-  7'b0000010 : out = {{{Width-15}{1'b0}}, in[31:17]};
+  7'b0000010 : out = {{{Width-15}{1'b0}}, in[29:15]};
 endcase
 
 //ALU에서
