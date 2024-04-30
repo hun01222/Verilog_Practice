@@ -25,10 +25,10 @@ module dataMemory
         mem[14] = 32'h00000003;
     end
     
-    always @(*) begin
+    always @(negedge clk) begin
         if(memRead == 1'b1)
             readData = mem[address];
         else if(memWrite == 1'b1)
-            mem[address] = writeData;
+            mem[address] = writeData; // 이걸 negedge 에서만 할 수 있도록
     end
 endmodule
