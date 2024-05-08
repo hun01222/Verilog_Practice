@@ -1,4 +1,4 @@
-module adder_P1
+module adder
     #(parameter Width = 32) 
 (
     input  [Width-1:0] addend, adder,
