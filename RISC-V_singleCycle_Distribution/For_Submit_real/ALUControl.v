@@ -27,7 +27,7 @@ module ALUControl
                 4'b0110 : control <= 4'b0001; // ori
                 4'b0101 : control <= 4'b1000; // srli
                 4'b1101 : control <= 4'b1010; // srai
-                4'b0000 : control <= 4'b1100; // addi3 수정필요
+                4'b1100 : control <= 4'b1100; // addi3 수정필요
                 default : control <= 4'bxxxx;
             endcase
         endcase
