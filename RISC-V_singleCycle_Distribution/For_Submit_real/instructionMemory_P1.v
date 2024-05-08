@@ -1,4 +1,4 @@
-module instructionMemory
+module instructionMemory_P1
     #(parameter Width = 32)
 (
     input  [Width-1:0] address,
