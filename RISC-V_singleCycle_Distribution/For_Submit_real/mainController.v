@@ -4,7 +4,7 @@ module mainController
     output ALUSrc, memToReg, regWrite, memRead, memWrite, branch, jal, jalr,
            [1:0] ALUOp
 );
-    reg [8:0] control;
+    reg [9:0] control;
     assign {ALUSrc, memToReg, regWrite, memRead, memWrite, branch, jal, jalr, ALUOp} = control;
     
     always @(*) begin
