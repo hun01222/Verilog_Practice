@@ -5,9 +5,9 @@ The answer about the midterm exam
     I zipped the file for executing Problem 2.
 
 2.2.
-    mem[ 0] = 32'h12320082; // addi3 x1, 9, 3, 4
-    mem[ 4] = 32'h04338102; // addi3 x2, 2, 3, 7
-    mem[ 8] = 32'h02218182; // addi3 x3, 1, 2, 3
+    mem[ 0] = 32'h52324082; // addi3 x1, 9, 3, 4
+    mem[ 4] = 32'h4433C102; // addi3 x2, 2, 3, 7
+    mem[ 8] = 32'h4221C182; // addi3 x3, 1, 2, 3
 
     From the instruction, I can get the result on register[1] = 16, register[2] = 12, register[3] = 6
 
