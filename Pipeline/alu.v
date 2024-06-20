@@ -4,6 +4,7 @@ module alu(
     input      [31:0] SrcAE,SrcBE,  // ALU 32-bit Inputs
     input      [4:0]  ALUControlE,  // ALU Selection
     input      [2:0]  funct3E,
+    
     output reg [31:0] ALUResult,    // ALU 32-bit Output
     output reg        CarryOut,     // Carry Out Flag
     output reg        ZeroE         // Zero Flag
@@ -14,7 +15,7 @@ module alu(
     reg  [32:0]  tmp;
 
     always @ (*) begin
-        tmp       = {1'b0, SrcAE} + {1'b0, SrcBE};
+        tmp       = {1'b0, SrcAE} + {1'b0, SrcBE}; // carry 때문에 만들어줌
         CarryOut  = tmp[32];
     end
 

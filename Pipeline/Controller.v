@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ps/1ps // branch prediction 구현이 기말고사 문제
 
 module Controller (
     input      [6:0] OP,
@@ -111,7 +111,7 @@ module Controller (
 
     always @ (*) begin
 
-        casex (checker)
+        casex (checker) // Opcode + func3 + func77
             17'b01100110000000000: ALUControlD = 5'b00000;
             17'b01100110000100000: ALUControlD = 5'b00001;
             17'b01100110000000001: ALUControlD = 5'b00010;

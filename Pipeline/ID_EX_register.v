@@ -14,8 +14,8 @@ module ID_EX_register (
     input             clk,
     input             RegWriteD,
     input             MemWriteD,
-    input             JumpD,
-    input             BranchD,
+    input             JumpD, // for branch
+    input             BranchD, // for branch
     input             ALUSrcD,
     input             ZeroE,
     input             FlushE,
@@ -23,8 +23,8 @@ module ID_EX_register (
     input [4:0]       ALUControlD,
     output reg        RegWriteE,
     output reg        MemWriteE,
-    output reg        JumpE,
-    output reg        BranchE,
+    output reg        JumpE, // for branch
+    output reg        BranchE, // for branch
     output reg        ALUSrcE,
     output reg        PCSrcE,
     output reg [1:0]  ResultSrcE,

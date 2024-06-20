@@ -1,0 +1,11 @@
+temp_a : x1, temp_b : x2, iterator : x3, i%2 : x4, i%32 : x5
+
+// i is even
+ld x1, 256(x5)
+ld x2, 384(x5)
+sw x1, 256(x4)
+
+// i is odd
+ld x1, 256(x5)
+ld x2, 384(x5)
+sw x2, 384(x4)

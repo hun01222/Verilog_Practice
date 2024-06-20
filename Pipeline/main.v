@@ -146,8 +146,8 @@ module main (
         .ALUControlD (ALUControlD),
         .RegWriteE   (RegWriteE  ),
         .MemWriteE   (MemWriteE  ),
-        .JumpE       (JumpE      ),
-        .BranchE     (BranchE    ),
+        .JumpE       (JumpE      ), // for branch
+        .BranchE     (BranchE    ), // for branch
         .ALUSrcE     (ALUSrcE    ),
         .PCSrcE      (PCSrcE     ),
         .ResultSrcE  (ResultSrcE ),
@@ -182,7 +182,7 @@ module main (
         .ALUControlE (ALUControlE),
         .funct3E     (funct3E    ),
         .ALUResult   (ALUResult  ),
-        .CarryOut    (CarryOut   ),
+        .CarryOut    (CarryOut   ), // 이거 안씀
         .ZeroE       (ZeroE      )
     );
 
@@ -212,7 +212,7 @@ module main (
         .MemWriteM  (MemWriteM ),
         .rst        (rst       ),
         .ReadData   (ReadData  ),
-        .DM0        (DM0       )
+        .DM0        (DM0       ) // for branch
     );
 
     MEM_WB_register i_4 (
@@ -247,8 +247,8 @@ module main (
         .MemWriteD   (MemWriteD  ),
         .ALUSrcD     (ALUSrcD    ),
         .RegWriteD   (RegWriteD  ),
-        .BranchD     (BranchD    ),
-        .JumpD       (JumpD      ),
+        .BranchD     (BranchD    ), // for branch
+        .JumpD       (JumpD      ), // for branch
         .ResultSrcD  (ResultSrcD ),
         .ALUControlD (ALUControlD),
         .ImmSrcD     (ImmSrcD    )

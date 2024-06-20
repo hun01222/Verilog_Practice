@@ -5,7 +5,7 @@ module sign_extend (
 );
 
     always @ (*) begin
-        casex(ImmSrcD)
+        casex(ImmSrcD) // 왜 Imm[24]로 extend??
             3'b000:  ImmExtD = {{20{Imm[24]}}, Imm[24:13]};                            // I type
             3'b001:  ImmExtD = {{20{Imm[24]}}, Imm[24:18], Imm[4:0]};                  // S type (stores)
             3'b010:  ImmExtD = {{20{Imm[24]}}, Imm[0],  Imm[23:18], Imm[4:1], 1'b0};   // B type (branches)

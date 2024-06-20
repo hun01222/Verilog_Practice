@@ -34,7 +34,7 @@ module Register_File (
         checkx1 = Registers[1];
         checkx2 = Registers[2];
         checkx3 = Registers[3];
-        checkx4 = Registers[19];
+        checkx4 = Registers[4];
         checkx5 = Registers[5];
         checkx6 = Registers[6];
         
