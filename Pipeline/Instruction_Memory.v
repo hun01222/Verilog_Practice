@@ -24,7 +24,7 @@ module Instruction_Memory (
         instructions_Value[44] = 32'h00211293; // 000000000010 00010 001 00111 0010011 // slli x7, x2, 2
         instructions_Value[48] = 32'h007203B3; // 0000000 00111 00100 000 00111 0110011 // add x7, x7, x4
         instructions_Value[52] = 32'h00038403; // 000000000000 00111 000 01000 0000011 // lw   x8, 0(x7)        
-        instructions_Value[56] = 32'h0421C263; // 0 000010 00010 00011 100 0010 0 1100011 // blt x6, x8, no_swap(68)    
+        instructions_Value[56] = 32'h0421C263; // 0 000010 00110 01000 100 0010 0 1100011 // blt x6, x8, no_swap(68)    
         instructions_Value[60] = 32'h0082A023; // 0000000 01000 00101 010 00000 0100011 // sw x8 0(x5)
         instructions_Value[64] = 32'h0063A023; // 0000000 00110 00111 010 00000 0100011 // sw x6 0(x7)
         // no_swap
