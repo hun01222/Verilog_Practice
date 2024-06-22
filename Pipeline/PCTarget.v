@@ -6,7 +6,7 @@ module PCTarget (
     output reg [31:0] PCTargetE
 );
     always @ (*) begin
-        PCTargetE = ImmExtE;        
+        PCTargetE = ImmExtE + PCE;        
     end
 
 
