@@ -12,11 +12,11 @@ module Address_Generator (
 );
     reg [31:0] PCFbar;
 
-    always @ (posedge clk) begin  //combinational block so block assignment (=) and not a non-blocking one (<=) 이거 왜 작동안함?
-            PCFbar <= PCSrcE ? PCTargetE : PCF + 4;
+    always @ (*) begin  //combinational block so block assignment (=) and not a non-blocking one (<=) 이거 왜 작동안함?
+            PCFbar = PCSrcE ? PCTargetE : PCF + 4;
     end
 
-    always @(posedge clk) begin //sequential block so non-block assigment (<=) is used
+    always @(negedge clk) begin //sequential block so non-block assigment (<=) is used
         if (rst) begin
             PCF <= 32'd0;
         end
