@@ -8,7 +8,7 @@ module Instruction_Memory (
     reg [31:0] instructions_Value [255:0];  //maximum 256 instruction can be here
 
     initial begin
-        
+
         instructions_Value[0] = 32'h00000093; //  000000000000 00000 000 00001 0010011 // addi x1, x0, 0
         instructions_Value[4] = 32'h00100113; //  000000000001 00000 000 00010 0010011 // addi x2, x0, 1
         instructions_Value[8] = 32'h00F00193; //  000000001111 00000 000 00011 0010011 // addi x3, x0, 15
@@ -42,6 +42,7 @@ module Instruction_Memory (
             3'b011:  ImmExtD = {{12{Imm[24]}}, Imm[12:5],  Imm[13], Imm[23:14], 1'b0}; // J type (branches)
         */
         
+        //Test Case of mine
         /*
         instructions_Value[ 0] = 32'h00120213; // 000000000001 00100 000 00100 0010011 // addi x4, x4, 1		
         instructions_Value[ 4] = 32'h0011C863; // 0 000000 00001 00011 100 1000 0 1100011 // blt  x1, x3, 20 -> 16
@@ -56,6 +57,26 @@ module Instruction_Memory (
         instructions_Value[40] = 32'h00110113; // 000000000001 00010 000 00010 0010011 // addi x2, x2, 1
         */
 
+        // Given Test Case
+        /*
+        instructions_Value[ 4] = 32'h002081B3; // add  x3, x1, x2		
+        instructions_Value[ 8] = 32'h403202B3; // sub  x5, x4, x3        
+	    instructions_Value[12] = 32'h00308383; // lw   x7, 3(x1)
+        instructions_Value[16] = 32'h0013F333; // and  x6, x7, x1
+        instructions_Value[20] = 32'h001112B3; // sll  x5, x2, x1
+        instructions_Value[24] = 32'h001122B3; // slt  x5, x2, x1
+        instructions_Value[28] = 32'h00210463; // 0 000000 00010 00010 000 0100 0 1100011 // beq  x2, x2, 4 -> -24
+        instructions_Value[32] = 32'h001132B3; // sltu x5, x2, x1  // skipped by beq
+        instructions_Value[36] = 32'h00322123; // sw x3 2(x4)
+        instructions_Value[40] = 32'h001152B3; // srl  x5, x2, x1
+        instructions_Value[44] = 32'h401152B3; // sra  x5, x2, x1
+        instructions_Value[48] = 32'h008002EF; // 0 0000000100 0 00000000 00101 1101111 // jal  x5, 2       // will jump on
+	    instructions_Value[52] = 32'h00110293; // addi x5, x2, 1
+        instructions_Value[56] = 32'h00312293; // slti x5, x2, 3
+        instructions_Value[60] = 32'h00517293; // andi x5, x2, 5
+        instructions_Value[64] = 32'h00211293; // slli x5, x2, 2
+        instructions_Value[68] = 32'h002102E7; // 0 0000000001 0 00010000 00101 1100111 // jar  x5, x2, 2   // will jump on instruction 4
+        */
     end
 
     always @ (*) begin

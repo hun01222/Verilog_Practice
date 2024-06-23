@@ -47,10 +47,21 @@ module main (
     wire [31:0] ReadData, ReadDataW, WriteDataE ;
     wire [1:0]  ForwardAE, ForwardBE;
     wire        StallF, StallD, FlushE, FlushD;
-                //multiple signals at one line are just to reduce the space
+    wire [31:0] P_PC;
 
 
 
+    Branch_Predictor b_p (
+        .ZeroE      (ZeroE      ),
+        .PCSrcE     (PCSrcE     ),
+        .PCD        (PCD        ),
+        .PCE        (PCE        ),
+        .PCTargetE  (PCTargetE  ),
+        .OP         (OP         ),
+        .FlushD     (FlushD     ),
+        .FlushE     (FlushE     ),
+        .P_PC       (P_PC       ),
+    );
 
     Address_Generator i_ag (
         .rst      (rst      ),
@@ -59,7 +70,8 @@ module main (
         .StallF   (StallF   ),
         .PCPlus4F (PCPlus4F ),
         .PCTargetE(PCTargetE),
-        .PCF      (PCF      )
+        .P_PC     (P_PC     ),
+        .PCF      (PCF      ),
     );
 
     Instruction_Memory i_im (

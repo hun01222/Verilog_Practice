@@ -7,6 +7,7 @@ module Address_Generator (
     input             StallF,
     input      [31:0] PCPlus4F,
     input      [31:0] PCTargetE,
+    input      [31:0] P_PC,
     
     output reg [31:0] PCF
 );
