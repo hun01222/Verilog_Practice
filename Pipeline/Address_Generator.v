@@ -16,7 +16,7 @@ module Address_Generator (
             PCFbar = PCSrcE ? PCTargetE : PCF + 4;
     end
 
-    always @(negedge clk) begin //sequential block so non-block assigment (<=) is used
+    always @(posedge clk) begin //sequential block so non-block assigment (<=) is used
         if (rst) begin
             PCF <= 32'd0;
         end
