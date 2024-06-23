@@ -60,7 +60,7 @@ module main (
         .OP         (OP         ),
         .FlushD     (FlushD     ),
         .FlushE     (FlushE     ),
-        .P_PC       (P_PC       ),
+        .P_PC       (P_PC       )
     );
 
     Address_Generator i_ag (
@@ -71,7 +71,7 @@ module main (
         .PCPlus4F (PCPlus4F ),
         .PCTargetE(PCTargetE),
         .P_PC     (P_PC     ),
-        .PCF      (PCF      ),
+        .PCF      (PCF      )
     );
 
     Instruction_Memory i_im (
