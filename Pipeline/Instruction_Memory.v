@@ -52,6 +52,8 @@ module Instruction_Memory (
         instructions_Value[24] = 32'h00110113; // 000000000001 00010 000 00010 0010011 // addi x2, x2, 1
         instructions_Value[28] = 32'h00110113; // 000000000001 00010 000 00010 0010011 // addi x2, x2, 1
         instructions_Value[32] = 32'hFE9FF06F; // 1 1111110100 1 11111111 00000 1101111 // jal  x0, 0 -> -24 => 11111111 11111111 11111111 11101000
+        instructions_Value[36] = 32'h00110113; // 000000000001 00010 000 00010 0010011 // addi x2, x2, 1
+        instructions_Value[40] = 32'h00110113; // 000000000001 00010 000 00010 0010011 // addi x2, x2, 1
 
     end
 
