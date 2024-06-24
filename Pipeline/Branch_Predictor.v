@@ -9,6 +9,7 @@ module Branch_Predictor (
     input      [6:0]  OP,
     output reg        FlushD,
     output reg        FlushE,
+    output reg        Taken,
     output reg [31:0] P_PC
 );
 
@@ -24,10 +25,11 @@ module Branch_Predictor (
   always @ (*) begin // taken on D
     if((OP==2'b1100011)&((branch_predictor_state[PCE]==2'b10)|(branch_predictor_state[PCE]==2'b11))) begin
       P_PC = branch_predictor_PC[PCD];
+      Taken=1;
     end
   end
 
-  always @(*) begin
+  always @ (*) begin
     if((branch_predictor_state[PCE]==2'b00)|(branch_predictor_state[PCE]==2'b01)) begin // not taken on E
       if(ZeroE & PCSrcE) begin // true
         // 구현되어 있음

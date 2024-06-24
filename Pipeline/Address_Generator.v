@@ -5,6 +5,7 @@ module Address_Generator (
     input             clk,
     input             PCSrcE,
     input             StallF,
+    input             Taken,
     input      [31:0] PCPlus4F,
     input      [31:0] PCTargetE,
     input      [31:0] P_PC,
@@ -23,7 +24,11 @@ module Address_Generator (
         end
 
         else if(StallF) begin // stall 이 발생하면 기존 PC값을 유지
-             PCF <= PCF;   
+            PCF <= PCF;   
+        end
+
+        else if(Taken) begin
+            PCF <= P_PC;
         end
 
         else begin

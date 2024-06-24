@@ -30,6 +30,7 @@ module main (
     wire        ZeroE;
     wire        RegWriteE;
     wire        MemWriteE, JumpE, BranchE, ALUSrcE, PCSrcE;
+    wire        Taken;
 
     wire [24:0] Imm;
     wire [6:0]  funct77;
@@ -50,18 +51,6 @@ module main (
     wire [31:0] P_PC;
 
 
-
-    Branch_Predictor b_p (
-        .ZeroE      (ZeroE      ),
-        .PCSrcE     (PCSrcE     ),
-        .PCD        (PCD        ),
-        .PCE        (PCE        ),
-        .PCTargetE  (PCTargetE  ),
-        .OP         (OP         ),
-        .FlushD     (FlushD     ),
-        .FlushE     (FlushE     ),
-        .P_PC       (P_PC       )
-    );
 
     Address_Generator i_ag (
         .rst      (rst      ),
@@ -284,6 +273,19 @@ module main (
         .FlushD    (FlushD    ),
         .ForwardAE (ForwardAE ),
         .ForwardBE (ForwardBE )
+    );
+
+    Branch_Predictor b_p (
+        .ZeroE      (ZeroE      ),
+        .PCSrcE     (PCSrcE     ),
+        .PCD        (PCD        ),
+        .PCE        (PCE        ),
+        .PCTargetE  (PCTargetE  ),
+        .OP         (OP         ),
+        .FlushD     (FlushD     ),
+        .FlushE     (FlushE     ),
+        .Taken      (Taken      ),
+        .P_PC       (P_PC       )
     );
 
     mux5 #(32) muxxx (
