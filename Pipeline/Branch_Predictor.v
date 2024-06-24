@@ -26,7 +26,7 @@ module Branch_Predictor (
   end
 
   always @ (*) begin // taken on D
-    if((OP==2'b1100011)&((branch_predictor_state[PCE]==2'b10)|(branch_predictor_state[PCE]==2'b11))) begin
+    if((OP==7'b1100011)&((branch_predictor_state[PCE]==2'b10)|(branch_predictor_state[PCE]==2'b11))) begin
       P_PC = branch_predictor_PC[PCD];
     end
   end
@@ -72,7 +72,7 @@ module Branch_Predictor (
   end
 
   always @ (*) begin
-    Taken = (OP==2'b1100011 & ((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)));
+    Taken = (OP==7'b1100011 & ((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)));
     FlushD_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & PCSrcE));
     FlushE_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & PCSrcE));
   end
