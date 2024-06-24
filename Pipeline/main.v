@@ -31,6 +31,8 @@ module main (
     wire        RegWriteE;
     wire        MemWriteE, JumpE, BranchE, ALUSrcE, PCSrcE;
     wire        Taken;
+    wire        FlushD_BP;
+    wire        FlushE_BP;
 
     wire [24:0] Imm;
     wire [6:0]  funct77;
@@ -267,6 +269,8 @@ module main (
         .RegWriteM (RegWriteM ),
         .RegWriteW (RegWriteW ),
         .PCSrcE    (PCSrcE    ),
+        .FlushD_BP (FlushD_BP ),
+        .FlushE_BP (FlushE_BP ),
         .StallF    (StallF    ),
         .StallD    (StallD    ),
         .FlushE    (FlushE    ),
@@ -282,8 +286,8 @@ module main (
         .PCE        (PCE        ),
         .PCTargetE  (PCTargetE  ),
         .OP         (OP         ),
-        .FlushD     (FlushD     ),
-        .FlushE     (FlushE     ),
+        .FlushD_BP  (FlushD_BP  ),
+        .FlushE_BP  (FlushE_BP  ),
         .Taken      (Taken      ),
         .P_PC       (P_PC       )
     );

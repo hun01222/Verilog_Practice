@@ -7,8 +7,8 @@ module Branch_Predictor (
     input      [31:0] PCE,
     input      [31:0] PCTargetE,
     input      [6:0]  OP,
-    output reg        FlushD,
-    output reg        FlushE,
+    output reg        FlushD_BP,
+    output reg        FlushE_BP,
     output reg        Taken,
     output reg [31:0] P_PC
 );
@@ -57,8 +57,8 @@ module Branch_Predictor (
         branch_predictor_state[PCE] = 2'b11;
       end
       else begin  // false
-        FlushD = 1;
-        FlushE = 1;
+        FlushD_BP = 1;
+        FlushE_BP = 1;
         P_PC = PCE + 4;
 
         if(branch_predictor_state[PCE]==2'b11) begin

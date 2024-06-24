@@ -12,6 +12,8 @@ module hazard_unit (
     input            RegWriteM,
     input            RegWriteW,
     input            PCSrcE,
+    input            FlushD_BP,
+    input            FlushE_BP,
     output reg       StallF,
     output reg       StallD,
     output reg       FlushE,
@@ -50,9 +52,9 @@ module hazard_unit (
     always @ (*) begin
         lwStall = (ResultSrcE[0] & ((Rs1D == RdE) | (Rs2D == RdE)));
         StallD  = lwStall;
-        FlushE  = lwStall | PCSrcE;
+        FlushE  = lwStall | PCSrcE | FlushE_BP;
         StallF  = lwStall; 
-        FlushD  = PCSrcE;
+        FlushD  = PCSrcE | FlushD_BP;
     end
 
 endmodule
