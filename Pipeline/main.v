@@ -59,6 +59,7 @@ module main (
         .clk      (clk      ),
         .PCSrcE   (PCSrcE   ),
         .StallF   (StallF   ),
+        .Taken    (Taken   ),
         .PCPlus4F (PCPlus4F ),
         .PCTargetE(PCTargetE),
         .P_PC     (P_PC     ),
@@ -275,6 +276,18 @@ module main (
         .FlushD    (FlushD    ),
         .ForwardAE (ForwardAE ),
         .ForwardBE (ForwardBE )
+    );
+
+    Branch_Predictor b_p (
+        .ZeroE      (ZeroE      ),
+        .PCSrcE     (PCSrcE     ),
+        .PCD        (PCD        ),
+        .PCE        (PCE        ),
+        .PCTargetE  (PCTargetE  ),
+        .OP         (OP         ),
+        .FlushD     (FlushD     ),
+        .FlushE     (FlushE     ),
+        .P_PC       (P_PC       )
     );
 
     PCSrcE_M pcs_e (
