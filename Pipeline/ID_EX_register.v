@@ -17,7 +17,6 @@ module ID_EX_register (
     input             JumpD, // for branch
     input             BranchD, // for branch
     input             ALUSrcD,
-    input             ZeroE,
     input             FlushE,
     input [1:0]       ResultSrcD,
     input [4:0]       ALUControlD,
@@ -26,7 +25,6 @@ module ID_EX_register (
     output reg        JumpE, // for branch
     output reg        BranchE, // for branch
     output reg        ALUSrcE,
-    output reg        PCSrcE,
     output reg [1:0]  ResultSrcE,
     output reg [4:0]  ALUControlE,
     output reg [31:0] PCE,
@@ -95,10 +93,6 @@ module ID_EX_register (
             Rs2E        <= Rs2D;
         end
         
-    end
-    
-    always @(*) begin    //this is a combinational block, so block assignment should be used
-        PCSrcE = (ZeroE && BranchE) || JumpE;
     end
     
 endmodule

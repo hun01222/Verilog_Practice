@@ -152,7 +152,6 @@ module main (
         .JumpE       (JumpE      ), // for branch
         .BranchE     (BranchE    ), // for branch
         .ALUSrcE     (ALUSrcE    ),
-        .PCSrcE      (PCSrcE     ),
         .ResultSrcE  (ResultSrcE ),
         .ALUControlE (ALUControlE),
         .PCE         (PCE        ),
@@ -279,17 +278,11 @@ module main (
         .ForwardBE (ForwardBE )
     );
 
-    Branch_Predictor b_p (
-        .ZeroE      (ZeroE      ),
-        .PCSrcE     (PCSrcE     ),
-        .PCD        (PCD        ),
-        .PCE        (PCE        ),
-        .PCTargetE  (PCTargetE  ),
-        .OP         (OP         ),
-        .FlushD_BP  (FlushD_BP  ),
-        .FlushE_BP  (FlushE_BP  ),
-        .Taken      (Taken      ),
-        .P_PC       (P_PC       )
+    PCSrcE_M pcs_e (
+        .JumpE      (JumpE    ),
+        .BranchE    (BranchE  ),
+        .ZeroE      (ZeroE    ),
+        .PCSrcE     (PCSrcE   )
     );
 
     mux5 #(32) muxxx (
