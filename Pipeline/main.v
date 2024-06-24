@@ -285,8 +285,9 @@ module main (
         .PCE        (PCE        ),
         .PCTargetE  (PCTargetE  ),
         .OP         (OP         ),
-        .FlushD     (FlushD     ),
-        .FlushE     (FlushE     ),
+        .FlushD_BP  (FlushD_BP  ),
+        .FlushE_BP  (FlushE_BP  ),
+        .Taken      (Taken      ),
         .P_PC       (P_PC       )
     );
 
