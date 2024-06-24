@@ -17,12 +17,17 @@ module Branch_Predictor (
   reg [31:0] branch_predictor_PC [255:0];
 
   initial begin
+    branch_predictor_PC[4] = 32'h00000014;
+    branch_predictor_state[4] = 2'b00;
+
+    /*
     branch_predictor_PC[20] = 32'h00000058;
     branch_predictor_PC[28] = 32'h0000004C;
     branch_predictor_PC[56] = 32'h00000044;
     branch_predictor_state[20] = 2'b00;
     branch_predictor_state[28] = 2'b00;
     branch_predictor_state[56] = 2'b00;
+    */
   end
 
   always @ (*) begin // taken on D
