@@ -43,7 +43,7 @@ module Branch_Predictor (
           branch_predictor_state[PCE] = 2'b11;
         end
       end
-      else begin // false
+      if(!(ZeroE) & PCSrcE) begin // false
         // PC = PC + 4
 
         branch_predictor_state[PCE] = 2'b00;
@@ -58,7 +58,7 @@ module Branch_Predictor (
 
         branch_predictor_state[PCE] = 2'b11;
       end
-      else begin  // false
+      if(!(ZeroE) & PCSrcE) begin  // false
         P_PC = PCE + 4;
 
         if(branch_predictor_state[PCE]==2'b11) begin
