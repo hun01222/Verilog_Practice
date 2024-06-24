@@ -17,8 +17,9 @@ module Branch_Predictor (
   reg [31:0] branch_predictor_PC [255:0];
 
   always @ (*) begin // initialization
-    if(branch_predictor_PC[PCE]==32'h00000000) begin
+    if(branch_predictor_PC[PCE]==32'hxxxxxxxx) begin
       branch_predictor_PC[PCE] = PCTargetE;
+      branch_predictor_state[PCE] = 2'b00;
     end
   end
 
