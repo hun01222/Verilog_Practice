@@ -8,7 +8,7 @@ module Instruction_Memory (
     reg [31:0] instructions_Value [255:0];  //maximum 256 instruction can be here
 
     initial begin
-
+        /*
         instructions_Value[0] = 32'h00000093; //  000000000000 00000 000 00001 0010011 // addi x1, x0, 0
         instructions_Value[4] = 32'h00100113; //  000000000001 00000 000 00010 0010011 // addi x2, x0, 1
         instructions_Value[8] = 32'h00F00193; //  000000001111 00000 000 00011 0010011 // addi x3, x0, 15
@@ -34,7 +34,7 @@ module Instruction_Memory (
         // end_inner
         instructions_Value[76] = 32'h00108093; // 000000000001 00001 000 00001 0010011 // addi x1, x1, 1
         instructions_Value[80] = 32'hFC5FF06F; // 1 1111100010 1 11111111 00000 1101111 // jal  x0, outer_loop(20) -> -60 => 11111111 11111111 11111111 11000100
-
+        */
         /*
             3'b000:  ImmExtD = {{20{Imm[24]}}, Imm[24:13]};                            // I type
             3'b001:  ImmExtD = {{20{Imm[24]}}, Imm[24:18], Imm[4:0]};                  // S type (stores)
@@ -43,7 +43,7 @@ module Instruction_Memory (
         */
         
         //The Test Case of mine
-        /*
+        
         instructions_Value[ 0] = 32'h00120213; // 000000000001 00100 000 00100 0010011 // addi x4, x4, 1		
         instructions_Value[ 4] = 32'h0011C863; // 0 000000 00001 00011 100 1000 0 1100011 // blt  x1, x3, 20 -> 16
 	    instructions_Value[ 8] = 32'h00108093; // 000000000001 00001 000 00001 0010011 // addi x1, x1, 1
@@ -55,7 +55,7 @@ module Instruction_Memory (
         instructions_Value[32] = 32'hFE1FF06F; // 1 1111110000 1 11111111 00000 1101111 // jal  x0, 0 -> -32 => 11111111 11111111 11111111 11100000
         instructions_Value[36] = 32'h00110113; // 000000000001 00010 000 00010 0010011 // addi x2, x2, 1
         instructions_Value[40] = 32'h00110113; // 000000000001 00010 000 00010 0010011 // addi x2, x2, 1
-        */
+        
 
         // Given Test Case
         /*
