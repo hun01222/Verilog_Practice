@@ -143,7 +143,6 @@ module main (
         .JumpD       (JumpD      ),
         .BranchD     (BranchD    ),
         .ALUSrcD     (ALUSrcD    ),
-        .ZeroE       (ZeroE      ),
         .FlushE      (FlushE     ),
         .ResultSrcD  (ResultSrcD ),
         .ALUControlD (ALUControlD),
