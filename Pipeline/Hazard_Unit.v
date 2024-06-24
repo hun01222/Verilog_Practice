@@ -52,7 +52,7 @@ module hazard_unit (
     always @ (*) begin
         lwStall = (ResultSrcE[0] & ((Rs1D == RdE) | (Rs2D == RdE)));
         StallD  = lwStall;
-        FlushE  = lwStall | PCSrcE | FlushE_BP;
+        // FlushE  = lwStall | PCSrcE | FlushE_BP;
         StallF  = lwStall; 
         FlushD  = PCSrcE | FlushD_BP;
     end
