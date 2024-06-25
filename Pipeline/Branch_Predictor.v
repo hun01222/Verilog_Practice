@@ -1,7 +1,7 @@
 `timescale 1ps/1ps
 
 module Branch_Predictor (
-    input             branchE,
+    input             BranchE,
     input             ZeroE,
     input             PCSrcE,
     input      [31:0] PCD,
