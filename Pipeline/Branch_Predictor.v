@@ -40,7 +40,7 @@ module Branch_Predictor (
     end
   end
 
-  always @ (*) begin // 잘 됨
+  always @ (posedge clk) begin // 잘 됨
     if((branch_predictor_state[PCE]==2'b00)|(branch_predictor_state[PCE]==2'b01)) begin // not taken on E
       if(ZeroE & BranchE) begin // true
         // 구현되어 있음
