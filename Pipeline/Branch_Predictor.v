@@ -8,6 +8,7 @@ module Branch_Predictor (
     input      [31:0] PCE,
     input      [31:0] PCTargetE,
     input      [6:0]  OP,
+    input             clk,
     output reg        FlushD_BP,
     output reg        FlushE_BP,
     output reg        Taken,
