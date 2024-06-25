@@ -81,7 +81,7 @@ module Branch_Predictor (
 
   always @ (*) begin
     Taken = ((OP==7'b1100011) & ((branch_predictor_state[PCD]==2'b10) | (branch_predictor_state[PCD]==2'b11)));
-    FlushD_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & PCSrcE));
-    FlushE_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & PCSrcE));
+    FlushD_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & BranchE));
+    FlushE_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & BranchE));
   end
 endmodule
