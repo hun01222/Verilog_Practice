@@ -79,7 +79,7 @@ module Branch_Predictor (
   end
 
   always @ (*) begin
-    Taken = ((OP==7'b1100011) & ((branch_predictor_state[PCD]==2'b10) | (branch_predictor_state[PCD]==2'b11)) & !(ZeroE & BranchE));
+    Taken = ((OP==7'b1100011) & ((branch_predictor_state[PCD]==2'b10) | (branch_predictor_state[PCD]==2'b11)));
   end
 
   always @ (*) begin

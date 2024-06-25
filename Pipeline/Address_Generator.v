@@ -15,7 +15,7 @@ module Address_Generator (
     reg [31:0] PCFbar;
 
     always @ (*) begin  //combinational block so block assignment (=) and not a non-blocking one (<=)
-        PCFbar = PCSrcE ? PCTargetE : PCF + 4;
+        PCFbar = (PCSrcE & !(Taken)) ? PCTargetE : PCF + 4;
     end
 
     always @(posedge clk) begin //sequential block so non-block assigment (<=) is used
