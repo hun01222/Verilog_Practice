@@ -26,7 +26,7 @@ module Branch_Predictor (
   end
 
   always @ (*) begin
-    if((branch_predictor_PC[PCE]==32'h00000000) && (branchE)) begin
+    if((branch_predictor_PC[PCE]==32'h00000000) && (PCSrcE)) begin
       branch_predictor_PC[PCE] = PCTargetE;
     end
   end
