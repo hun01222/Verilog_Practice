@@ -1,6 +1,7 @@
 `timescale 1ps/1ps
 
 module Branch_Predictor (
+    input             branchE,
     input             ZeroE,
     input             PCSrcE,
     input      [31:0] PCD,
@@ -26,7 +27,7 @@ module Branch_Predictor (
   end
 
   always @ (*) begin
-    if((branch_predictor_PC[PCE]==32'h00000000) && (PCSrcE)) begin
+    if((branch_predictor_PC[PCE]==32'h00000000) && (BranchE)) begin
       branch_predictor_PC[PCE] = PCTargetE;
     end
   end

@@ -279,6 +279,7 @@ module main (
     );
 
     Branch_Predictor b_p (
+        .BranchE    (BranchE    ),
         .ZeroE      (ZeroE      ),
         .PCSrcE     (PCSrcE     ),
         .PCD        (PCD        ),
