@@ -34,13 +34,13 @@ module Branch_Predictor (
     end
   end
 
-  always @ (*) begin // taken on D // 잘 안됨
+  always @ (*) begin // taken on D
     if((OP==7'b1100011)&((branch_predictor_state[PCD]==2'b10)|(branch_predictor_state[PCD]==2'b11))) begin
       P_PC = branch_predictor_PC[PCD];
     end
   end
 
-  always @ (posedge clk) begin // 잘 됨
+  always @ (posedge clk) begin
     if((branch_predictor_state[PCE]==2'b00)|(branch_predictor_state[PCE]==2'b01)) begin // not taken on E
       if(ZeroE & BranchE) begin // true
         // 구현되어 있음
@@ -57,11 +57,9 @@ module Branch_Predictor (
 
         branch_predictor_state[PCE] = 2'b00;
       end
-
-
     end
 
-    else begin // taken on E // 잘 안됨
+    else begin // taken on E
       if(ZeroE & BranchE) begin // true
         // 그냥 넘어가면 됨 -> 앞서 구현함
 
@@ -80,8 +78,11 @@ module Branch_Predictor (
     end
   end
 
-  always @ (*) begin // 잘 안됨
+  always @ (posedge clk) begin
     Taken = ((OP==7'b1100011) & ((branch_predictor_state[PCD]==2'b10) | (branch_predictor_state[PCD]==2'b11)));
+  end
+
+  always @ (*) begin
     FlushD_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & BranchE));
     FlushE_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & BranchE));
   end
