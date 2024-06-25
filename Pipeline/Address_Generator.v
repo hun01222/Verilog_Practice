@@ -23,12 +23,12 @@ module Address_Generator (
             PCF <= 32'd0;
         end
 
-        else if(StallF) begin // stall 이 발생하면 기존 PC값을 유지
-            PCF <= PCF;   
-        end
-
         else if(Taken) begin
             PCF <= P_PC;
+        end
+
+        else if(StallF) begin // stall 이 발생하면 기존 PC값을 유지
+            PCF <= PCF;   
         end
 
         else begin
