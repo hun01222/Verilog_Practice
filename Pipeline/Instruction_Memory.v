@@ -45,7 +45,7 @@ module Instruction_Memory (
         //The Test Case of mine // 수정필요 0110011
         
         instructions_Value[ 0] = 32'h003181B3; // 000000000011 00011 000 00011 0110011 // addi x3, x3, 3	
-        instructions_Value[ 4] = 32'h0230C063; // 0 000001 00011 00001 100 0000 0 1100011 // blt  x1, x3, 36 -> 32
+        instructions_Value[ 4] = 32'h0211C063; // 0 000001 00001 00011 100 0000 0 1100011 // blt  x1, x3, 36 -> 32
 	    instructions_Value[ 8] = 32'h00108093; // 000000000001 00001 000 00001 0110011 // addi x1, x1, 1
         instructions_Value[12] = 32'h00110113; // 000000000001 00010 000 00010 0110011 // addi x2, x2, 1
         instructions_Value[16] = 32'h00110113; // 000000000001 00010 000 00010 0110011 // addi x2, x2, 1
