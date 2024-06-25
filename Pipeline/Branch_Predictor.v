@@ -15,10 +15,11 @@ module Branch_Predictor (
 
   reg [1:0] branch_predictor_state [255:0];
   reg [31:0] branch_predictor_PC [255:0];
+  
+  integer i;
 
   initial begin
     
-    integer i;
     for(i = 0; i < 255; i = i + 1) begin
       branch_predictor_PC[i] = 2'b00;
     end
