@@ -112,7 +112,7 @@ module Controller (
     always @ (*) begin
 
         casex (checker) // Opcode + func3 + func77
-            17'b01100110000000000: ALUControlD = 5'b00000;
+            17'b0x100110000000000: ALUControlD = 5'b00000;
             17'b01100110000100000: ALUControlD = 5'b00001;
             17'b01100110000000001: ALUControlD = 5'b00010;
             17'b01100111000000001: ALUControlD = 5'b00011;
@@ -120,7 +120,7 @@ module Controller (
             17'b01100111110000000: ALUControlD = 5'b01000;
             17'b01100111100000000: ALUControlD = 5'b01001;
             17'b01100111000000000: ALUControlD = 5'b01010;
-            17'b01100110010000000: ALUControlD = 5'b00100; //sll,logical shift left
+            17'b0x100110010000000: ALUControlD = 5'b00100; //sll,logical shift left
             17'b01100111010000000: ALUControlD = 5'b00101; //srl,logical shift right
             17'b0010011000xxxxxxx: ALUControlD = 5'b00000;
             17'b11000110001111111: ALUControlD = 5'b00001; //beq
