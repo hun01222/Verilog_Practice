@@ -21,7 +21,7 @@ module Branch_Predictor (
   initial begin
     
     for(i = 0; i < 255; i = i + 1) begin
-      branch_predictor_PC[i] = 2'b00;
+      branch_predictor_state[i] = 2'b00;
     end
 
     branch_predictor_PC[4] = 32'h00000014;
