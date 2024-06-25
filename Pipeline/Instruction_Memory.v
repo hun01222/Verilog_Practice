@@ -41,7 +41,7 @@ module Instruction_Memory (
         */
         
         //The Test Case of mine
-        
+        /*
         instructions_Value[ 0] = 32'h000181B3; // 000000000000 00011 000 00011 0110011 // addi x3, x3, 0
         instructions_Value[ 4] = 32'h0011CA63; // 0 000000 00001 00011 100 1010 0 1100011 // blt  x1, x3, 24 -> 20
 	    instructions_Value[ 8] = 32'h00108093; // 000000000001 00001 000 00001 0110011 // addi x1, x1, 1
