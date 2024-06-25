@@ -28,20 +28,21 @@ module Branch_Predictor (
   end
 
   always @ (posedge clk) begin
+    branch_predictor_state[0] = 2'b00;
     if((branch_predictor_PC[PCE]==32'h00000000) && (BranchE)) begin
       branch_predictor_PC[PCE] <= PCTargetE;
     end
   end
 
-  always @ (*) begin // taken on D
+  always @ (*) begin // taken on D // 잘 안됨
     if((OP==7'b1100011)&((branch_predictor_state[PCD]==2'b10)|(branch_predictor_state[PCD]==2'b11))) begin
       P_PC = branch_predictor_PC[PCD];
     end
   end
 
-  always @ (*) begin
+  always @ (*) begin // 잘 됨
     if((branch_predictor_state[PCE]==2'b00)|(branch_predictor_state[PCE]==2'b01)) begin // not taken on E
-      if(ZeroE & PCSrcE) begin // true
+      if(ZeroE & BranchE) begin // true
         // 구현되어 있음
 
         if(branch_predictor_state[PCE]==2'b00) begin
@@ -51,7 +52,7 @@ module Branch_Predictor (
           branch_predictor_state[PCE] = 2'b11;
         end
       end
-      if(!(ZeroE) & PCSrcE) begin // false
+      if(!(ZeroE) & BranchE) begin // false
         // PC = PC + 4
 
         branch_predictor_state[PCE] = 2'b00;
@@ -60,13 +61,13 @@ module Branch_Predictor (
 
     end
 
-    else begin // taken on E
-      if(ZeroE & PCSrcE) begin // true
-        // 그냥 넘어가면 됨
+    else begin // taken on E // 잘 안됨
+      if(ZeroE & BranchE) begin // true
+        // 그냥 넘어가면 됨 -> 앞서 구현함
 
         branch_predictor_state[PCE] = 2'b11;
       end
-      if(!(ZeroE) & PCSrcE) begin  // false
+      if(!(ZeroE) & BranchE) begin  // false
         P_PC = PCE + 4;
 
         if(branch_predictor_state[PCE]==2'b11) begin
@@ -79,7 +80,7 @@ module Branch_Predictor (
     end
   end
 
-  always @ (*) begin
+  always @ (*) begin // 잘 안됨
     Taken = ((OP==7'b1100011) & ((branch_predictor_state[PCD]==2'b10) | (branch_predictor_state[PCD]==2'b11)));
     FlushD_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & BranchE));
     FlushE_BP = (((branch_predictor_state[PCE]==2'b10) | (branch_predictor_state[PCE]==2'b11)) & !(ZeroE & BranchE));
